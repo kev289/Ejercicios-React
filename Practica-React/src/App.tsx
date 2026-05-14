@@ -12,6 +12,8 @@ import TaskReducer from './Ejercicios/TaskReducer'
 import ThemeContextApp from './Ejercicios/ThemeContextApp'
 import AuthContextApp from './Ejercicios/AuthContextApp'
 import ContactForm from './Ejercicios/ContactForm'
+import PostList from './Ejercicios/PostList'
+import UserDashboard from './Ejercicios/UserDashboard'
 
 function App() {
   return (
@@ -41,6 +43,10 @@ function App() {
       <AuthContextApp />
       <hr />
       <ContactForm />
+      <hr />
+      <PostList />
+      <hr />
+      <UserDashboard />
     </main>
   )
 }
