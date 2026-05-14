@@ -10,6 +10,8 @@ import ProductFilter from './Ejercicios/ProductFilter'
 import FocusInput from './Ejercicios/FocusInput'
 import TaskReducer from './Ejercicios/TaskReducer'
 import ThemeContextApp from './Ejercicios/ThemeContextApp'
+import AuthContextApp from './Ejercicios/AuthContextApp'
+import ContactForm from './Ejercicios/ContactForm'
 
 function App() {
   return (
@@ -35,6 +37,10 @@ function App() {
       <TaskReducer />
       <hr />
       <ThemeContextApp />
+      <hr />
+      <AuthContextApp />
+      <hr />
+      <ContactForm />
     </main>
   )
 }

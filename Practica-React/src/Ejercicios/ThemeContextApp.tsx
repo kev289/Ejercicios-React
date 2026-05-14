@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from "react";
-// 1. Definimos el tipo de datos del contexto
 type Theme = "light" | "dark";
 
 interface ThemeContextType {
@@ -7,11 +6,8 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-// 2. Creamos el Contexto
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// 3. Creamos el Proveedor del Contexto (Provider)
-// Este componente envolverá a los demás para darles acceso al tema.
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>("dark");
 
@@ -35,14 +31,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// 4. Hook personalizado para usar el contexto de forma fácil
 const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) throw new Error("useTheme debe usarse dentro de un ThemeProvider");
   return context;
 };
-
-// --- COMPONENTES QUE CONSUMEN EL CONTEXTO ---
 
 const ThemeButton = () => {
   const { theme, toggleTheme } = useTheme();
@@ -72,7 +65,6 @@ const ThemeBox = () => {
   );
 };
 
-// Componente principal del ejercicio
 const ThemeContextApp = () => {
   return (
     <div className="exercise-container">
