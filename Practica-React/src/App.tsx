@@ -9,6 +9,7 @@ import ShoppingCart from './Ejercicios/ShoppingCart'
 import ProductFilter from './Ejercicios/ProductFilter'
 import FocusInput from './Ejercicios/FocusInput'
 import TaskReducer from './Ejercicios/TaskReducer'
+import ThemeContextApp from './Ejercicios/ThemeContextApp'
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
       <FocusInput />
       <hr />
       <TaskReducer />
+      <hr />
+      <ThemeContextApp />
     </main>
   )
 }
