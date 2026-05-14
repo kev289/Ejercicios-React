@@ -40,7 +40,18 @@ const useTheme = () => {
 const ThemeButton = () => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <button onClick={toggleTheme} className="btn btn-primary">
+    <button 
+      onClick={toggleTheme} 
+      style={{
+        padding: '10px 15px',
+        background: theme === "light" ? "#1a1a1a" : "#f9f9f9",
+        color: theme === "light" ? "#f9f9f9" : "#1a1a1a",
+        border: 'none',
+        borderRadius: '8px',
+        cursor: 'pointer',
+        fontWeight: 'bold'
+      }}
+    >
       Cambiar a tema {theme === "light" ? "Oscuro" : "Claro"}
     </button>
   );
@@ -67,8 +78,8 @@ const ThemeBox = () => {
 
 const ThemeContextApp = () => {
   return (
-    <div className="exercise-container">
-      <h2>11. Context API (Tema Global)</h2>
+    <div>
+      <h2>Context API</h2>
       <ThemeProvider>
         <ThemeDisplay />
         <ThemeButton />

@@ -34,10 +34,10 @@ const UserSearch = () => {
   }, [searchTerm]); 
 
   return (
-    <div className="exercise-container">
-      <h2>3. Buscador de Usuarios</h2>
+    <div>
+      <h2>Buscador de Usuarios</h2>
       
-      <div className="form-group">
+      <div>
         <input
           type="text"
           placeholder="Buscar por nombre o rol..."
@@ -46,15 +46,15 @@ const UserSearch = () => {
         />
       </div>
 
-      <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left' }}>
+      <ul>
         {filteredUsers.length > 0 ? (
           filteredUsers.map(user => (
-            <li key={user.id} style={{ marginBottom: '10px', padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
+            <li key={user.id}>
               <strong>{user.name}</strong> - <small>{user.role}</small>
             </li>
           ))
         ) : (
-          <p className="error-text">No se encontraron usuarios que coincidan con "{searchTerm}"</p>
+          <p>No se encontraron usuarios que coincidan con "{searchTerm}"</p>
         )}
       </ul>
     </div>

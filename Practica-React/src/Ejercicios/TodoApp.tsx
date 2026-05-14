@@ -52,29 +52,25 @@ const TodoApp = () => {
   });
 
   return (
-    <div className="exercise-container">
-      <h2>4. Lista de Tareas (Local Storage)</h2>
+    <div>
+      <h2>Lista de Tareas</h2>
 
-      <form onSubmit={addTodo} className="form-group" style={{ display: 'flex', gap: '10px' }}>
+      <form onSubmit={addTodo}>
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="¿Qué hay que hacer?"
         />
-        <button type="submit" className="btn btn-primary" style={{ width: 'auto' }}>Añadir</button>
+        <button type="submit">Añadir</button>
       </form>
 
-      <div style={{ display: 'flex', gap: '5px', marginBottom: '20px' }}>
+      <div>
         {(["Todas", "Pendientes", "Completadas"] as Filter[]).map(f => (
           <button 
             key={f} 
-            className="btn" 
-            style={{ 
-              background: filter === f ? '#646cff' : 'rgba(255,255,255,0.1)',
-              padding: '5px 10px',
-              fontSize: '0.8rem'
-            }}
+            
+           
             onClick={() => setFilter(f)}
           >
             {f}
@@ -82,25 +78,15 @@ const TodoApp = () => {
         ))}
       </div>
 
-      <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left' }}>
+      <ul>
         {filteredTodos.map(todo => (
-          <li key={todo.id} style={{ 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center',
-            padding: '10px',
-            background: 'rgba(255,255,255,0.05)',
-            borderRadius: '8px',
-            marginBottom: '5px',
-            textDecoration: todo.completed ? 'line-through' : 'none',
-            opacity: todo.completed ? 0.6 : 1
-          }}>
-            <span onClick={() => toggleTodo(todo.id)} style={{ cursor: 'pointer', flex: 1 }}>
+          <li key={todo.id}>
+            <span onClick={() => toggleTodo(todo.id)}>
               {todo.title}
             </span>
             <button 
               onClick={() => deleteTodo(todo.id)}
-              style={{ background: 'transparent', border: 'none', color: '#ff4646', cursor: 'pointer', fontWeight: 'bold' }}
+             
             >
               X
             </button>
@@ -109,7 +95,7 @@ const TodoApp = () => {
       </ul>
       
       {filteredTodos.length === 0 && (
-        <p style={{ opacity: 0.5 }}>No hay tareas en esta categoría.</p>
+        <p>No hay tareas en esta categoría.</p>
       )}
     </div>
   );

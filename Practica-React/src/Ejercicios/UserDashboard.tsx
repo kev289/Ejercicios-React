@@ -37,15 +37,15 @@ const UserDashboard = () => {
   }, [search, users]);
 
   return (
-    <div className="exercise-container" style={{ maxWidth: '800px' }}>
-      <h2>15. Dashboard Integrador (Final)</h2>
+    <div>
+      <h2>Dashboard Integrador</h2>
 
       {loading && <p>⏳ Cargando base de datos de usuarios...</p>}
-      {error && <p className="error-text">❌ Error: {error}</p>}
+      {error && <p>❌ Error: {error}</p>}
 
       {!loading && !error && (
         <>
-          <div className="form-group">
+          <div>
             <input
               ref={inputRef}
               type="text"
@@ -55,27 +55,16 @@ const UserDashboard = () => {
             />
           </div>
 
-          <p style={{ textAlign: 'left', opacity: 0.6 }}>
+          <p>
             Mostrando {filteredUsers.length} de {users?.length} usuarios
           </p>
 
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', 
-            gap: '15px',
-            marginTop: '20px'
-          }}>
+          <div>
             {filteredUsers.map((user) => (
-              <div key={user.id} style={{ 
-                padding: '15px', 
-                background: 'rgba(255,255,255,0.05)', 
-                borderRadius: '12px',
-                textAlign: 'left',
-                border: '1px solid rgba(100, 108, 255, 0.2)'
-              }}>
-                <h4 style={{ margin: '0 0 5px 0', color: '#646cff' }}>{user.name}</h4>
-                <p style={{ fontSize: '0.8rem', margin: '0', opacity: 0.8 }}>📧 {user.email}</p>
-                <p style={{ fontSize: '0.7rem', margin: '5px 0 0 0', opacity: 0.5 }}>
+              <div key={user.id}>
+                <h4>{user.name}</h4>
+                <p>📧 {user.email}</p>
+                <p>
                   🏢 {user.company.name}
                 </p>
               </div>
@@ -83,7 +72,7 @@ const UserDashboard = () => {
           </div>
 
           {filteredUsers.length === 0 && (
-            <p style={{ marginTop: '30px', opacity: 0.5 }}>No hay coincidencias en la base de datos.</p>
+            <p>No hay coincidencias en la base de datos.</p>
           )}
         </>
       )}

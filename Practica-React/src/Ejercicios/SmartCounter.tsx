@@ -8,26 +8,26 @@ const SmartCounter = () => {
   const reset = () => setCount(0);
 
   return (
-    <div className="exercise-container">
-      <h2>1. Contador Inteligente</h2>
-      <div className="counter-display">
+    <div>
+      <h2>Contador Inteligente</h2>
+      <div>
         <span className={count >= 10 ? 'limit-reached' : ''}>{count}</span>
       </div>
       
       {count >= 10 && (
-        <p className="warning-message">
+        <p>
           Has llegado al límite recomendado
         </p>
       )}
 
-      <div className="button-group">
-        <button onClick={increment} className="btn btn-primary">
+      <div>
+        <button onClick={increment}>
           Incrementar
         </button>
-        <button onClick={decrement} className="btn btn-secondary">
+        <button onClick={decrement}>
           Disminuir
         </button>
-        <button onClick={reset} className="btn btn-danger">
+        <button onClick={reset}>
           Reiniciar
         </button>
       </div>

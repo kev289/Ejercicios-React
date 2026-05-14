@@ -50,46 +50,33 @@ const TaskReducer = () => {
   };
 
   return (
-    <div className="exercise-container">
-      <h2>10. Gestión de Tareas (useReducer)</h2>
+    <div>
+      <h2>Gestión de Tareas</h2>
 
-      <form onSubmit={handleAddTask} className="form-group" style={{ display: 'flex', gap: '10px' }}>
+      <form onSubmit={handleAddTask}>
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Nueva tarea con reducer..."
         />
-        <button type="submit" className="btn btn-primary" style={{ width: 'auto' }}>
+        <button type="submit">
           +
         </button>
       </form>
 
-      <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left' }}>
+      <ul>
         {tasks.map((task) => (
-          <li key={task.id} style={{ 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center', 
-            padding: '10px', 
-            background: 'rgba(255,255,255,0.05)', 
-            marginBottom: '5px',
-            borderRadius: '8px'
-          }}>
+          <li key={task.id}>
             <span 
               onClick={() => dispatch({ type: "TOGGLE_TASK", payload: task.id })}
-              style={{ 
-                cursor: 'pointer', 
-                textDecoration: task.completed ? 'line-through' : 'none',
-                opacity: task.completed ? 0.5 : 1,
-                flex: 1
-              }}
+             
             >
               {task.title}
             </span>
             <button 
               onClick={() => dispatch({ type: "DELETE_TASK", payload: task.id })}
-              style={{ background: 'transparent', border: 'none', color: '#ff4646', cursor: 'pointer' }}
+             
             >
               🗑️
             </button>
@@ -100,8 +87,8 @@ const TaskReducer = () => {
       {tasks.some(t => t.completed) && (
         <button 
           onClick={() => dispatch({ type: "CLEAR_COMPLETED" })}
-          className="btn btn-secondary"
-          style={{ marginTop: '10px', fontSize: '0.8rem' }}
+         
+         
         >
           Limpiar completadas
         </button>

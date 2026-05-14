@@ -43,7 +43,7 @@ const LoginForm = () => {
   return (
     <div>
       <h3>Inicia Sesión</h3>
-      <div className="form-group">
+      <div>
         <input 
           type="text" 
           placeholder="Tu nombre..." 
@@ -51,7 +51,7 @@ const LoginForm = () => {
           onChange={(e) => setName(e.target.value)} 
         />
       </div>
-      <button onClick={() => login(name)} className="btn btn-primary" disabled={!name}>
+      <button onClick={() => login(name)} disabled={!name}>
         Entrar
       </button>
     </div>
@@ -64,7 +64,7 @@ const UserProfile = () => {
     <div>
       <h3>Bienvenido, {user?.username}! </h3>
       <p>Has iniciado sesión correctamente.</p>
-      <button onClick={logout} className="btn btn-danger">
+      <button onClick={logout}>
         Cerrar Sesión
       </button>
     </div>
@@ -74,7 +74,7 @@ const UserProfile = () => {
 const AuthStatus = () => {
   const { user } = useAuth();
   return (
-    <div style={{ marginTop: '20px', padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
+    <div>
       {user ? (
         <p>Estado: Conectado como <strong>{user.username}</strong></p>
       ) : (
@@ -86,8 +86,8 @@ const AuthStatus = () => {
 
 const AuthContextApp = () => {
   return (
-    <div className="exercise-container">
-      <h2>12. Context API (Autenticación)</h2>
+    <div>
+      <h2>Context API</h2>
       <AuthProvider>
         <AuthContent />
         <AuthStatus />

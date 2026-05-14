@@ -39,29 +39,24 @@ const ShoppingCart = () => {
   }, [cart]);
 
   return (
-    <div className="exercise-container">
-      <h2>7. Carrito de Compras (useMemo)</h2>
+    <div>
+      <h2>Carrito de Compras</h2>
 
       {cart.length > 0 ? (
-        <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left' }}>
+        <ul>
           {cart.map(item => (
-            <li key={item.id} style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              padding: '10px', 
-              borderBottom: '1px solid rgba(255,255,255,0.1)' 
-            }}>
+            <li key={item.id}>
               <div>
                 <strong>{item.name}</strong>
                 <br />
                 <small>${item.price} c/u</small>
               </div>
               
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <button onClick={() => updateQuantity(item.id, -1)} className="btn" style={{ width: '30px', padding: '5px' }}>-</button>
+              <div>
+                <button onClick={() => updateQuantity(item.id, -1)}>-</button>
                 <span>{item.quantity}</span>
-                <button onClick={() => updateQuantity(item.id, 1)} className="btn" style={{ width: '30px', padding: '5px' }}>+</button>
-                <button onClick={() => removeItem(item.id)} style={{ background: 'transparent', border: 'none', color: '#ff4646', cursor: 'pointer', marginLeft: '10px' }}>🗑️</button>
+                <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+                <button onClick={() => removeItem(item.id)}>🗑️</button>
               </div>
             </li>
           ))}
@@ -70,9 +65,9 @@ const ShoppingCart = () => {
         <p>El carrito está vacío.</p>
       )}
 
-      <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(100, 108, 255, 0.1)', borderRadius: '12px', textAlign: 'right' }}>
+      <div>
         <p>Total Productos: <strong>{totalItems}</strong></p>
-        <p style={{ fontSize: '1.2rem' }}>Total a Pagar: <strong style={{ color: '#646cff' }}>${totalPrice}</strong></p>
+        <p>Total a Pagar: <strong>${totalPrice}</strong></p>
       </div>
     </div>
   );

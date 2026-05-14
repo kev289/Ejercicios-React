@@ -32,24 +32,24 @@ const Timer = () => {
   };
 
   return (
-    <div className="exercise-container">
-      <h2>6. Temporizador</h2>
+    <div>
+      <h2>Temporizador</h2>
       
-      <div className="counter-display">
+      <div>
         <span>{seconds}s</span>
       </div>
 
-      <div className="button-group">
+      <div>
         {!isActive ? (
-          <button onClick={handleStart} className="btn btn-primary">
+          <button onClick={handleStart}>
             Iniciar
           </button>
         ) : (
-          <button onClick={handlePause} className="btn btn-secondary">
+          <button onClick={handlePause}>
             Pausar
           </button>
         )}
-        <button onClick={handleReset} className="btn btn-danger">
+        <button onClick={handleReset}>
           Reiniciar
         </button>
       </div>

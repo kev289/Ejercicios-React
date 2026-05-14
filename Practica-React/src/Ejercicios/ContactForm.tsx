@@ -21,11 +21,11 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="exercise-container">
-      <h2>13. Hook Personalizado (useForm)</h2>
+    <div>
+      <h2>Hook Personalizado</h2>
       
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div>
           <label>Nombre:</label>
           <input 
             type="text" 
@@ -36,7 +36,7 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div>
           <label>Asunto:</label>
           <input 
             type="text" 
@@ -47,19 +47,19 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div>
           <label>Mensaje:</label>
           <textarea 
             name="mensaje" 
             rows={4}
             value={values.mensaje} 
             onChange={handleChange} 
-            style={{ width: '100%', borderRadius: '12px', padding: '10px', background: 'var(--bg)', color: 'var(--text-h)', border: '1px solid var(--border)' }}
+           
             required 
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit">
           Enviar Mensaje
         </button>
       </form>

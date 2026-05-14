@@ -47,27 +47,21 @@ const UserList = () => {
   }, []); 
 
   return (
-    <div className="exercise-container">
-      <h2>5. Consumo de API (fetch)</h2>
+    <div>
+      <h2>Consumo de API</h2>
 
-      {loading && <p style={{ color: '#646cff', fontWeight: 'bold' }}>⏳ Cargando usuarios...</p>}
+      {loading && <p>⏳ Cargando usuarios...</p>}
 
-      {error && <p className="error-text">Error: {error}</p>}
+      {error && <p>Error: {error}</p>}
 
       {!loading && !error && (
-        <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left' }}>
+        <ul>
           {users.map((user) => (
-            <li key={user.id} style={{ 
-              padding: '12px', 
-              borderBottom: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(255,255,255,0.02)',
-              marginBottom: '5px',
-              borderRadius: '8px'
-            }}>
-              <strong style={{ display: 'block', color: '#646cff' }}>{user.name}</strong>
-              <small style={{ opacity: 0.8 }}>{user.email}</small>
+            <li key={user.id}>
+              <strong>{user.name}</strong>
+              <small>{user.email}</small>
               <br />
-              <small style={{ opacity: 0.6 }}>{user.address.city}</small>
+              <small>{user.address.city}</small>
             </li>
           ))}
         </ul>

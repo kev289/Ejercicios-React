@@ -38,11 +38,11 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="exercise-container">
-      <h2>2. Formulario de Registro</h2>
+    <div>
+      <h2>Formulario de Registro</h2>
       
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div>
           <label>Nombre:</label>
           <input 
             type="text" 
@@ -53,7 +53,7 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div>
           <label>Email:</label>
           <input 
             type="email" 
@@ -63,11 +63,11 @@ const RegisterForm = () => {
             required 
           />
           {!isEmailValid && form.email.length > 0 && (
-            <span className="error-text">El email debe contener @</span>
+            <span>El email debe contener @</span>
           )}
         </div>
 
-        <div className="form-group">
+        <div>
           <label>Contraseña:</label>
           <input 
             type="password" 
@@ -77,11 +77,11 @@ const RegisterForm = () => {
             required 
           />
           {!isPasswordValid && form.password.length > 0 && (
-            <span className="error-text">Mínimo 8 caracteres</span>
+            <span>Mínimo 8 caracteres</span>
           )}
         </div>
 
-        <div className="form-group">
+        <div>
           <label>Confirmar Contraseña:</label>
           <input 
             type="password" 
@@ -91,17 +91,17 @@ const RegisterForm = () => {
             required 
           />
           {!passwordsMatch && form.confirmPassword.length > 0 && (
-            <span className="error-text">Las contraseñas no coinciden</span>
+            <span>Las contraseñas no coinciden</span>
           )}
         </div>
 
-        <button type="submit" className="btn btn-primary" disabled={!isFormValid}>
+        <button type="submit" disabled={!isFormValid}>
           Registrar
         </button>
       </form>
 
       {userRegistered && (
-        <div className="form-summary">
+        <div>
           <h3>Usuario Registrado</h3>
           <p><strong>Nombre:</strong> {userRegistered.nombre}</p>
           <p><strong>Email:</strong> {userRegistered.email}</p>
