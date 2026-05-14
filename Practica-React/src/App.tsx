@@ -8,6 +8,7 @@ import Timer from './Ejercicios/Timer'
 import ShoppingCart from './Ejercicios/ShoppingCart'
 import ProductFilter from './Ejercicios/ProductFilter'
 import FocusInput from './Ejercicios/FocusInput'
+import TaskReducer from './Ejercicios/TaskReducer'
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
       <ProductFilter />
       <hr />
       <FocusInput />
+      <hr />
+      <TaskReducer />
     </main>
   )
 }
